@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    environment {
+        CC = 'clang'
+    }
+    stages {
+        stage('create env variable') {
+        withENV(['test=praneeth_11/05/2017']) {
+        echo test
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
+    }
+}
